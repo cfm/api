@@ -36,6 +36,9 @@ export default function getJSONSchemaDefaults(jsonSchemas: SchemaWrapper[]) {
             if (schema.type === 'object' && indexProperty) {
               defaults[indexProperty] = {};
             }
+	    else if (schema.type === 'array' && indexProperty) {
+              defaults[indexProperty] = [];
+            }
 
             let destination = defaults;
             if (parentPointer) {
